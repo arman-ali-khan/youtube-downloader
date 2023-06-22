@@ -1,13 +1,14 @@
-import { Html, Head, Main, NextScript } from 'next/document'
+import { Head, Html, Main, NextScript } from "next/document";
 
 export default function Document() {
   return (
     <Html lang="en">
+      <title>Download Youtube Video and Audio</title>
       <Head />
       <body>
         <Main />
         <NextScript />
       </body>
     </Html>
-  )
+  );
 }
