@@ -3,9 +3,9 @@ import ytdl from "ytdl-core";
 
 export default async function handler(req, res) {
 
-  
+
   const {url}  = req.query;
-  console.log(url)
+ 
   if (req.method === "GET") {
   
     const videoId = ytdl.getURLVideoID(url);

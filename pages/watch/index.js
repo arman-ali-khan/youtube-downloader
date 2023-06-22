@@ -52,15 +52,28 @@ const viewUrl = downnloadUrl.split('/')[3]
       <div>{
         loading1 ? <div>Loading...</div>
     : 
-    <div>
+    <div className="w-96">
+      <div className="bg-base-200 px-4 py-2">
+        <h2 className="text-xl font-bold">{downloadData.videoDetails.title}</h2>
+      </div>
+      {/* <div className="grid grid-cols-4">
+        {
+          downloadData.videoDetails.thumbnails.map(thumb=>{
+            return <img src={thumb.url} key={thumb.url} className="w-full h-full object-cover" />
+          })
+        }
+      </div> */}
          <div>
                     <iframe src={downloadData.videoDetails.embed.iframeUrl} width="100%" height="200px"></iframe>
                 </div>
+                <div className="w-full bg-base-100 p-3">
+              <h2 className="text-base font-bold">Video</h2>
+            </div>
+          <div className="flex flex-row-reverse justify-center gap-1 flex-wrap my-2">
+           
           {formats?.map((format, i) => (
-            <div className={`${format.qualityLabel || 'hidden'} ${ format.hasAudio || 'hidden'}`} key={i}>
-               
-              <div>{format.qualityLabel}</div>
-              <div className="relative">
+            <div className={`flex justify-center ${format.qualityLabel || 'hidden'} ${ format.hasAudio || 'hidden'}`} key={i}>
+              <div className="relative ">
                 <a className="btn btn-success" href={format.url} target="_blank">
                   {format.qualityLabel}
                 </a>
@@ -68,6 +81,23 @@ const viewUrl = downnloadUrl.split('/')[3]
               </div>
             </div>
           ))}
+          </div>
+                <div className="w-full bg-base-100 p-3">
+              <h2 className="text-base font-bold">Audio</h2>
+            </div>
+          <div className="flex flex-row-reverse justify-center gap-1 flex-wrap my-2">
+           
+          {formats?.map((format, i) => (
+            <div className={`flex justify-center ${format.qualityLabel && 'hidden'} ${ format.hasAudio || 'hidden'}`} key={i}>
+              <div className="relative ">
+                <a className="btn btn-success" href={format.url} target="_blank">
+                 Mp3
+                </a>
+                {format.hasAudio || <div className="absolute left-0 top-0"><IoVolumeMuteOutline size={15}/></div>}
+              </div>
+            </div>
+          ))}
+          </div>
         </div>
     }
        
