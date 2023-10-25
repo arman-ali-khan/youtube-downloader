@@ -14,7 +14,7 @@
     "better-ytdl-core": "^1.0.1",
     "daisyui": "^3.1.5",
     "fs": "^0.0.1-security",
-    "next": "13.4.7",
+    "next": "13.5.0",
     "postcss": "8.4.24",
     "react": "18.2.0",
     "react-dom": "18.2.0",
